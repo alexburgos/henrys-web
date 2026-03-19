@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500&display=swap"
+      rel="stylesheet"
+    />
+    <title>Henry's Cocktail Bar</title>
+    <script>
+      const theme = localStorage.getItem("theme");
+      if (theme === "dark") document.documentElement.setAttribute("data-theme", "dark");
+    </script>
+  </head>
+  <body>
+    <button class="theme-toggle" type="button" aria-label="Toggle theme"></button>
+
+    <main>
+      <section class="content">
+        <div class="logo" role="img" aria-label="Henry's Cocktail Bar"></div>
+        <nav>
+          <a href="#about">ABOUT</a>
+          <a href="#contact">CONTACT</a>
+          <a href="#reservations">RESERVATIONS</a>
+        </nav>
+      </section>
+
+      <section class="illustration" aria-hidden="true">
+        <div class="room" role="img" aria-hidden="true"></div>
+      </section>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

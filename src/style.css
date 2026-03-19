@@ -1,0 +1,178 @@
+:root {
+  --bg: #eee7d9;
+  --accent: #eb5b25;
+}
+
+[data-theme="dark"] {
+  --bg: #eb5b25;
+  --accent: #eee7d9;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--accent);
+  font-family: "Clash Grotesk", sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  cursor:
+    url("/henrys-head.png") 16 16,
+    auto;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  min-height: 100vh;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ---- Left: content ---- */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: clamp(24px, 5.3vw, 76px);
+  padding-right: 24px;
+  gap: 40px;
+  z-index: 1;
+}
+
+.logo {
+  width: min(508px, 100%);
+  aspect-ratio: 508 / 171;
+  background-color: var(--accent);
+  mask-image: url("/logo.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-image: url("/logo.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  transition: background-color 0.4s ease;
+}
+
+nav {
+  display: flex;
+  gap: 48px;
+  padding-left: 15px;
+}
+
+nav a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition:
+    color 0.4s ease,
+    opacity 0.2s ease;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
+/* ---- Right: illustration ---- */
+
+.illustration {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.room {
+  width: 100%;
+  max-height: 100vh;
+  aspect-ratio: 764 / 974;
+  background-color: var(--accent);
+  mask-image: url("/room.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: right top;
+  -webkit-mask-image: url("/room.svg");
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: right top;
+  transition: background-color 0.4s ease;
+}
+
+/* ---- Theme toggle ---- */
+
+.theme-toggle {
+  position: fixed;
+  top: 28px;
+  left: 28px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2.5px solid var(--accent);
+  background: transparent;
+  cursor: pointer;
+  z-index: 10;
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.theme-toggle:hover {
+  opacity: 0.8;
+}
+
+[data-theme="dark"] .theme-toggle {
+  background: var(--accent);
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    min-height: 100vh;
+  }
+
+  .content {
+    padding: 80px 24px 32px;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+
+  .logo {
+    width: min(320px, 80vw);
+  }
+
+  nav {
+    padding-left: 0;
+    gap: 32px;
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 20px;
+  }
+
+  .illustration {
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .room {
+    max-height: none;
+    mask-position: center bottom;
+    -webkit-mask-position: center bottom;
+  }
+}
