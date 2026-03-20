@@ -1,8 +1,8 @@
 import "./style.css";
 
-const toggle = document.querySelector<HTMLButtonElement>(".theme-toggle")!;
+const illustration = document.querySelector<HTMLButtonElement>(".illustration")!;
 
-toggle.addEventListener("click", () => {
+illustration.addEventListener("click", () => {
   const isDark = document.documentElement.getAttribute("data-theme") === "dark";
 
   if (isDark) {

@@ -15,22 +15,47 @@
     </script>
   </head>
   <body>
-    <button class="theme-toggle" type="button" aria-label="Toggle theme"></button>
+    <a
+      class="instagram-link"
+      href="https://www.instagram.com/henrys.cocktailbar/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <rect x="2" y="2" width="20" height="20" rx="5" />
+        <circle cx="12" cy="12" r="5" />
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+      </svg>
+    </a>
 
     <main>
       <section class="content">
         <div class="logo" role="img" aria-label="Henry's Cocktail Bar"></div>
         <nav>
-          <a href="#about">ABOUT</a>
-          <a href="#contact">CONTACT</a>
           <a href="#reservations">RESERVATIONS</a>
         </nav>
       </section>
 
-      <section class="illustration" aria-hidden="true">
-        <div class="room" role="img" aria-hidden="true"></div>
-      </section>
+      <button class="illustration" type="button" aria-label="Toggle theme">
+        <div class="room"></div>
+      </button>
     </main>
+
+    <section id="reservations" class="reservations">
+      <p>Call us for a good time!</p>
+      <p>(or just to reserve a table)</p>
+      <p class="reservations-phone"><a href="tel:+34933007695">+34 93 30 07 695</a></p>
+    </section>
 
     <script type="module" src="/src/main.ts"></script>
   </body>
