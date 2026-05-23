@@ -5,6 +5,7 @@
 /* Contained funky background — rounded edges visible against page cream */
 .photos-bg {
     margin: 0 auto;
+    max-width: 1100px;
     padding: clamp(32px, 5vw, 64px);
     background-image: url("/funky-quare.webp");
     background-size: contain;
@@ -17,6 +18,7 @@
 .photos-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: clamp(0, 0, 0);
     justify-items: center;
 }
 
