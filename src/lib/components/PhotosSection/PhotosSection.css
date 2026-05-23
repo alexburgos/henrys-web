@@ -1,12 +1,57 @@
 .photos {
-    padding: 120px clamp(24px, 5.3vw, 76px);
-    max-width: 1280px;
-    margin: 0 auto;
+    padding: clamp(48px, 8vw, 100px) clamp(24px, 5.3vw, 76px);
 }
 
-@media (max-width: 900px) {
-    .photos {
-        padding: 80px 24px;
-        text-align: center;
+/* Contained funky background — rounded edges visible against page cream */
+.photos-bg {
+    margin: 0 auto;
+    padding: clamp(32px, 5vw, 64px);
+    background-image: url("/funky-quare.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.photos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+.polaroid-wrapper {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor:
+        url("/henrys-head.png") 16 16,
+        pointer;
+    transform: rotate(var(--rotate));
+    transition: transform 0.3s ease;
+    width: 100%;
+}
+
+.polaroid-wrapper:hover {
+    transform: rotate(0deg) scale(1.05);
+    z-index: 1;
+    position: relative;
+}
+
+@media (max-width: 700px) {
+    .photos-bg {
+        border-radius: 24px;
+        padding: 24px;
+        background-image: none;
+    }
+
+    .photos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 460px) {
+    .photos-grid {
+        grid-template-columns: 1fr;
     }
 }
