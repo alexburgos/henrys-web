@@ -1,0 +1,125 @@
+button {
+    cursor: pointer;
+}
+
+.menu {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 120px clamp(24px, 5.3vw, 76px);
+}
+
+.menu-inner {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    align-items: center;
+    gap: 48px;
+}
+
+.menu-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-heading {
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    line-height: 1;
+}
+
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lang-sep {
+    font-size: 18px;
+    opacity: 0.4;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--accent);
+    transition: opacity 0.2s ease;
+    letter-spacing: 0.02em;
+}
+
+.lang-btn:hover {
+    opacity: 0.7 !important;
+}
+
+/* ---- flip card ---- */
+
+.flip-card {
+    perspective: 1200px;
+    width: 100%;
+    max-width: 560px;
+}
+
+/*
+  flip-card-front is in normal flow so it drives container height.
+  All images are the same portrait ratio (~2420×3412) so height stays stable.
+  flip-card-back is absolute so it overlaps without affecting layout.
+*/
+.flip-card-inner {
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.flip-card-front {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.flip-card-back {
+    position: absolute;
+    inset: 0;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    pointer-events: none;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.flip-card-front img,
+.flip-card-back img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .menu {
+        padding: 80px 24px;
+    }
+
+    .menu-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .menu-left {
+        align-items: center;
+        text-align: center;
+    }
+
+    .flip-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}

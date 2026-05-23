@@ -1,0 +1,12 @@
+.photos {
+    padding: 120px clamp(24px, 5.3vw, 76px);
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    .photos {
+        padding: 80px 24px;
+        text-align: center;
+    }
+}

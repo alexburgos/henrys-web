@@ -1,0 +1,41 @@
+.illustration {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.room {
+    /* height-driven: caps the illustration so it doesn't dominate on wide viewports */
+    width: auto;
+    max-width: 100%;
+    height: min(72vh, 660px);
+    aspect-ratio: 764 / 974;
+    background-color: var(--accent);
+    mask-image: url("/room.svg");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: right top;
+    -webkit-mask-image: url("/room.svg");
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: right top;
+    transition: background-color 0.4s ease;
+}
+
+@media (max-width: 900px) {
+    .illustration {
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .room {
+        width: auto;
+        max-width: 100%;
+        height: min(60vh, 480px);
+        mask-position: center bottom;
+        -webkit-mask-position: center bottom;
+    }
+}

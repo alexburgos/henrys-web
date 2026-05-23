@@ -1,0 +1,14 @@
+.instagram-link {
+    position: fixed;
+    top: 28px;
+    left: 28px;
+    color: var(--accent);
+    z-index: 10;
+    transition:
+        color 0.4s ease,
+        opacity 0.2s ease;
+}
+
+.instagram-link:hover {
+    opacity: 0.7;
+}
