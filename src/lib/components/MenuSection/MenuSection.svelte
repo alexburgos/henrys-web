@@ -7,6 +7,7 @@
     let pageIndex = $state(0);
     let isFlipping = $state(false);
 
+    let pdfHref = $derived(`/menu-${lang}.pdf`);
     let currentSrc = $derived(`/menu/${lang}/menu-${pageIndex}.webp`);
     let nextIndex = $derived((pageIndex + 1) % PAGE_COUNT);
     let nextSrc = $derived(`/menu/${lang}/menu-${nextIndex}.webp`);
@@ -71,6 +72,7 @@
                     Spanish
                 </button>
             </div>
+            <p class="sub">(pdf version available <a class="pdf-link" href={pdfHref} download>here</a>)</p>
         </div>
 
         <div class="menu-right">
@@ -102,5 +104,5 @@
 </section>
 
 <style>
-    @import './MenuSection.css';
+    @import "./MenuSection.css";
 </style>

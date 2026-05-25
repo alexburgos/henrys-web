@@ -19,5 +19,5 @@
 </main>
 
 <style>
-    @import './HomeSection.css';
+    @import "./HomeSection.css";
 </style>
